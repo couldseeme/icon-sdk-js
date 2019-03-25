@@ -16,7 +16,6 @@ yarn-error.log*
 .npmignore
 yarn.lock
 package-lock.json
-.travis.yml
 .nvmrc
 .eslintrc
 .editorconfig
