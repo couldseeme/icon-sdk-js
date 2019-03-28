@@ -1,9 +1,9 @@
 language: node_js
 node_js:
   - "node"
-cache:
-  directories:
-    - "node_modules"
+# cache:
+#   directories:
+#     - "node_modules"
 # before_install:
 #   - npm install -g github-release-notes release-it
 # before_script:
