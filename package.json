@@ -1,13 +1,9 @@
 {
-  "name": "icon-sdk-js",
+  "name": "@couldseeme/icon-sdk-js",
   "version": "0.0.16",
   "description": "JavaScript SDK for ICON",
   "main": "./build/icon-sdk-js.node.min.js",
-  "author": {
-    "id": "iconfoundation",
-    "name": "icon.foundation",
-    "email": "foo@icon.foundation"
-  },
+  "author": "icon.foundation <foo@icon.foundation>",
   "scripts": {
     "build:node": "NODE_PATH=./ webpack --env build && cd quickstart && cp -rf ../build ./node_modules/icon-sdk-js && node node.js",
     "build:native": "NODE_PATH=./ webpack --env build && cd ../react-native-test && cp -rf ../icon-sdk-js/build ./ && expo start",
@@ -19,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/couldseeme/icon-sdk-js/"
+    "url": "git+https://github.com/couldseeme/icon-sdk-js.git"
   },
   "keywords": [
     "webpack",
@@ -71,5 +67,9 @@
     "uuid": "^3.3.2",
     "xmlhttprequest": "^1.8.0"
   },
-  "browser": "./build/icon-sdk-js.web.min.js"
+  "browser": "./build/icon-sdk-js.web.min.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  }
 }
