@@ -1,4 +1,5 @@
 npm --no-git-tag-version version patch
+git checkout master
 regex=$(cat <<< "
 changelog|
 \bUpdate\sCHANGELOG.md\b|
@@ -18,7 +19,6 @@ auto-changelog \
     --starting-commit '36ac2d6c0b9e5059b549cbb0f2a57184c5270387'
 version=$(node -p "require('./package.json').version")
 npm run build
-git checkout master
 git add *
 git commit \
     -m "Update version (v$version) [ci skip]"
