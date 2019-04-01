@@ -7,6 +7,7 @@ cache:
 branches:
   only: 
     - master
+    - dev
 before_install:
   - npm install -g github-release-notes release-it
 before_script:
@@ -15,3 +16,5 @@ before_script:
 env:
   matrix:
     secure: ZMg2j3mWfyk0uhFc3SUMuLr5Y19DvpWiuOWDfitW58I5vxlLzQwulycUWzzpmpKsf8iQcC70rReg9NaNnyu2tZfLk9kZzR/4fW6NJHevTrCfR4ipgUboLHXFuhe/IF3MyXwPN8opkPAYVIgaLbiXZpMh9kwfHrYGvjuZMnbFAfEetvVx+10Bg8BN+dPhGkuOe2kEIvt/GH9jSeWKYuY2rf1jPvuiRKnTJpImN6Vecy9HaRdIstBR4q8NhMUDkUmGkVLJiiw+VmU77Uc7ILaZY09lySn70e1YCV72QdXsLyue1MLg+s8uoMO7TKhV8nrrDRcUy/noWYpWkJG2rKeP+pId5yVdFBgSiIPYu+syxFyNK559RQk7P/HqJHHpUrJFBkxHCsIog31FcccugHYoa4FgpjWPBJYYOvMzX13ztwoRzIEM1jY2MsGcWvy+fxA9Y3X4irgUPqxUEDz21SNCToO+S98zzseTlbYI8HvkyEsDl+j52PuM3n2AwTIt3jZ6UyBAYzFqYX6KQ8kHcD8sMUt+cD0DtzP7C7UcjrBqGwVnLwo94h6wB2QmPegd6ngp5EGKwfKe/1sqbETS2WMFDai4J5dApyO65S+OUSpFWDAEDKgSogE0Ii1VYDi1KwjRFEl0p4KubxcKwo7Cb3QKZ2+xFLp97MDnBDxnbzUnj7M=
+after_success:
+  - 'if [  "$TRAVIS_BRANCH" = "master" && "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./travis/deploy.sh; fi'
