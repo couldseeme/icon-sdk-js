@@ -21,10 +21,9 @@ npm run build
 git add *
 git commit \
     -m "Update version (v$version)"
-git push
+git push origin master
 git tag \
     -a v$version \
     -m "Update version (v$version)"
 git push \
     --tags origin master
-npm publish
