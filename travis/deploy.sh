@@ -24,5 +24,6 @@ git commit \
     -m "Update version (v$version) [ci skip]"
 git push https://$GITHUB_TOKEN@github.com/couldseeme/icon-sdk-js master
 git tag \
-    -a v$version
+    -a v$version \
+    -m "Update version (v$version) [ci skip]"
 git push https://$GITHUB_TOKEN@github.com/couldseeme/icon-sdk-js v$version
