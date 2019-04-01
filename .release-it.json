@@ -5,7 +5,6 @@
       "tagAnnotation": "Update version (v${version})"
     },
     "npm": {
-      "publish": true,
-      "private": true
+      "publish": false
     }
 }
