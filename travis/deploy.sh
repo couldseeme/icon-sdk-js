@@ -18,12 +18,12 @@ auto-changelog \
     --starting-commit '36ac2d6c0b9e5059b549cbb0f2a57184c5270387'
 version=$(node -p "require('./package.json').version")
 npm run build
+git checkout master
 git add *
 git commit \
     -m "Update version (v$version)"
-git push origin master
+git push https://$GITHUB_TOKEN@github.com/couldseeme/icon-sdk-js master
 git tag \
-    -a v$version \
-    -m "Update version (v$version)"
+    -a v$version
 git push \
-    --tags origin master
+    --tags https://$GITHUB_TOKEN@github.com/couldseeme/icon-sdk-js master

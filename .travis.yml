@@ -1,17 +1,22 @@
 language: node_js
 node_js:
-  - "node"
+- node
 cache:
   directories:
-    - "node_modules"
+  - node_modules
 branches:
-  only: 
-    - master
-    - dev
+  only:
+  - master
+  - dev
 before_install:
-  - 'if [ "$TRAVIS_BRANCH" == master ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then npm install -g auto-changelog; fi'
+- if [ "$TRAVIS_BRANCH" == master ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+  npm install -g auto-changelog; fi
 before_script:
-  - git config --global user.name "JH Kim"
-  - git config --global user.email "couldseeme@icon.foundation"
+- git config --global user.name "JH Kim"
+- git config --global user.email "couldseeme@icon.foundation"
 after_success:
-  - 'if [ "$TRAVIS_BRANCH" == master ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then bash ./travis/deploy.sh; fi'
+- if [ "$TRAVIS_BRANCH" == master ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+  bash ./travis/deploy.sh; fi
+env:
+  global:
+    secure: T3U1ABZCvGxw6PMTWVmos/xD6f9e9+ME+/aN4Sp6t3gOsZXxiZ6C2bmz8WjlzuTMTGnPfuIdhbjSfQiht7Fnfx5fiNo1F9nxEmJbAFvx+64TgQ7Khos5vDXDo5429DvJP2H2A9cPjEWouNPHerHCGg2r/E3zP4R2eHxxcK/2JnsmGNyH16bCzd/ebf/F5DH3zxDzByBgwqwTKycJAp3PKL0chJ++3ImktpBZzYWwp1S9sTNCOPPGCfXgWQj/vfQ02fmervIDq77xgvLdsHjsT+abKJLkKzGD2gdy+LR1cGbn98cMchQtHF1FsgprYTVVUMEFaoCARKoLDASybbc68SD2NwaalM5i5ElX6aFPttFRBuL51HOj/mFip58Gcmdg+rmOCjM8A5/QLxtUbMMMVKeOP4ip77jyxrL2o8uZdE2exEL5RP/WfpyJiLA9aNNW4XeonoMPchpHW4zoRP2DdEABwUcPnIfpou7iKjf+WsJLMglAqLAa+QDzXfgEN6+zu/Lq2sPVkYo7+bMLUQ6XIiAdh5X7KXNvhkauRd3m+/q8Wdpr6EABApK1J1g9Mh5dM01SyHSHTk6laH+EZWnmRR9mL8cTCfgUixxIHZ6Ok4BsRVVTXfo+iBRBeORDLMbCk2IL0sZgb4/vlBcJaBopxcO4TH6BiOzCnuz/uM9x1Fc=
