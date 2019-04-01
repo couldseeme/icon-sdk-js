@@ -9,7 +9,7 @@ branches:
     - master
     - dev
 before_install:
-  - npm install -g github-release-notes release-it
+  - 'if [  "$TRAVIS_BRANCH" = "master" && "$TRAVIS_PULL_REQUEST" = "false" ]; then npm install -g github-release-notes release-it; fi'
 before_script:
   - git config --global user.name "JH Kim"
   - git config --global user.email "couldseeme@icon.foundation"
