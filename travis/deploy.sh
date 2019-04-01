@@ -25,5 +25,4 @@ git commit \
 git push https://$GITHUB_TOKEN@github.com/couldseeme/icon-sdk-js master
 git tag \
     -a v$version
-git push \
-    --tags https://$GITHUB_TOKEN@github.com/couldseeme/icon-sdk-js master
+git push https://$GITHUB_TOKEN@github.com/couldseeme/icon-sdk-js v$version
